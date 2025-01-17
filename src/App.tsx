@@ -1,6 +1,7 @@
 import {useRoutes } from "react-router-dom";
-import { useLocalRoutes } from "./useRoutes"
+import { useLocalRoutes } from "./routes/useRoutes"
 import { Suspense } from "react";
+import "./styles/index.css";
 
 
 function App() {

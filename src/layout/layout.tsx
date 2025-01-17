@@ -1,14 +1,18 @@
 import { Outlet } from "react-router-dom";
+import Sidebar from "./sidebar";
+import Header from "./header";
 
 const Layout = () => {
   return (
-    <div>
-      <div>Sidebar</div>
-      <div>Header</div>
-      <div>
-        <Outlet /> {/* Burada alt sayfalar gösterilecek */}
+    <>
+    <Header/>
+    <div className="flex relative">
+     <Sidebar/>
+      <div className="ms-[330px]">
+        <Outlet />
       </div>
     </div>
+    </>
   );
 };
 
