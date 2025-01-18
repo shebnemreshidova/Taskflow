@@ -1,4 +1,5 @@
 import Board from "../../components/board"
+import CreateBoard from "../../components/createBoard"
 
 const Boards = () => {
   const boards=[
@@ -11,6 +12,7 @@ const Boards = () => {
       {boards.map((board)=>(
         <Board key={board.id} bg={board.bg} name={board.name}/>
       ))}
+      <CreateBoard/>
     </div>
   )
 }

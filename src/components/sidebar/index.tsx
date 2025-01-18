@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const sidebarLinks = [
-    { id: 1, title: "Boards", icon: "🏠", path: "/" },
-    { id: 2, title: "Profile", icon: "👤", path: "/" },
+    { id: 1, title: "Boards", icon: "🏠", path: "/boards" },
+    { id: 2, title: "Profile", icon: "👤", path: "/profile" },
     { id: 3, title: "Settings", icon: "⚙️", path: "/settings" },
   ];
   return (
@@ -11,7 +11,7 @@ const Sidebar = () => {
       <div className="flex flex-col gap-5">
         {sidebarLinks.map((link) => (
           <NavLink
-            className='text-white p-2 rounded-lg'
+            className="text-white p-2 rounded-lg"
             key={link.id}
             to={link.path}
             style={({ isActive }) => ({

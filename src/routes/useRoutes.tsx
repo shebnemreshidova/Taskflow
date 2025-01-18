@@ -1,9 +1,10 @@
 import { lazy, Suspense } from "react";
-import { Navigate } from "react-router-dom";
 import Layout from "../layout/layout";
 import { routeEndpoints } from "./endpoint";
+import { Navigate } from "react-router-dom";
 const Settings = lazy(() => import('../pages/settings'))
 const Boards=lazy(()=>import("../pages/boards"))
+const Profile=lazy(()=>import("../pages/profile"))
 
 export function useLocalRoutes() {
   return [
@@ -17,10 +18,10 @@ export function useLocalRoutes() {
       children: [
         {
           path: "",
-          element: <Navigate to={routeEndpoints.board} />,
+          element: <Navigate to={routeEndpoints.boards} />,
         },
         {
-          path: routeEndpoints.board,
+          path: routeEndpoints.boards,
           index: true,
           element: (
             <Suspense fallback="Loading...">
@@ -33,6 +34,14 @@ export function useLocalRoutes() {
           element: (
             <Suspense fallback="Loading...">
               <Settings />
+            </Suspense>
+          ),
+        },
+        {
+          path: routeEndpoints.profile,
+          element: (
+            <Suspense fallback="Loading...">
+              <Profile />
             </Suspense>
           ),
         },

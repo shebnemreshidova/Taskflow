@@ -2,6 +2,7 @@ export const routeEndpoints={
     auth:{
         login:"/auth/login"
     },
-        board:'/boards',
-        settings:'/settings'
+        boards:'/boards',
+        settings:'/settings',
+        profile:'/profile',
 }
