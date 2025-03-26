@@ -1,28 +1,19 @@
-import { forwardRef } from "react";
-
-
-interface AppHandleInputProps {
-  label?: string;
-  name: string;
-  control: any;
-  required: boolean;
-  inputType: string;
-  placeholder: string
-  helperText: string
-  parentClassname?: string;
-  labelClassname?: string;
-  inputClassname?: string;
+import { forwardRef, ReactNode } from "react";
+interface IAppHandleInputProps {
+  label: ReactNode
 }
-const AppHandleInput = forwardRef<HTMLInputElement, AppHandleInputProps>((
-
-) => {
-  return (
-    <div>
-      <label htmlFor=""></label>
-      <input type="" />
-    </div>
-  )
-}
-)
-AppHandleInput.displayName = "AppHandleInput";
-export default AppHandleInput
+const ApphandleInput = forwardRef<HTMLInputElement, IAppHandleInputProps>(
+  ({
+    label
+  }) => {
+    return (
+      <div className="flex flex-col gap-2">
+        {label && <label
+        
+        >{label}</label>}
+      </div>
+    )
+  }
+);
+ApphandleInput.displayName = "AppHandleInput"
+export default ApphandleInput
